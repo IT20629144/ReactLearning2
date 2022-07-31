@@ -5,6 +5,12 @@ import IntervalHookCounter from './ComponentHook/IntervalHookCounter';
 import DataFetching from './ComponentHook/DataFetching';
 import DataFetchingpartTwo from './ComponentHook/DataFetchingpartTwo';
 import DataFetchingPartThree from './ComponentHook/DataFetchingPartThree';
+import { createContext } from 'react';
+import React from 'react'
+import ComponentC from './ComponentHook/ComponentC';
+
+ export const UserContext = React.createContext()
+ export const ChannelContext = React.createContext()
 
 function App() {
   return (
@@ -13,7 +19,15 @@ function App() {
        {/* <IntervalHookCounter/> */}
         {/* <DataFetching/> */}
         {/* <DataFetchingpartTwo/> */}
-        <DataFetchingPartThree/>
+        {/* <DataFetchingPartThree/> */}
+
+
+        <UserContext.Provider value='Ravindu'>
+           <ChannelContext.Provider value='Coding'>
+              <ComponentC/>
+           </ChannelContext.Provider>
+            
+        </UserContext.Provider>
     </div>
   );
 }
